@@ -195,6 +195,7 @@ section {
 
 .header .cart-items-container .cart-item .fa-times:hover {
   color: var(--main-color);
+  zoom: 105%;
 }
 
 .header .cart-items-container .cart-item img {
