@@ -42,3 +42,48 @@ function phoneFormat(input) {
   }
   return input
 }
+
+//Modal-------------------------------------------------------------------
+
+var modal = document.getElementById('myModal')
+
+var btn = document.getElementById('myBtn')
+
+var okButton = document.getElementsByClassName('close')[0]
+
+btn.onclick = function () {
+  modal.style.display = 'block'
+}
+
+okButton.onclick = function () {
+  modal.style.display = 'none'
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none'
+  }
+}
+
+//Checkout Modal-------------------------------------------------------------------
+
+var checkoutModal = document.getElementById('myCheckoutModal')
+
+var checkoutBtn = document.getElementById('myCheckoutBtn')
+
+var checkoutOkButton = document.getElementById('myCheckoutOk')
+
+checkoutBtn.onclick = function () {
+  checkoutModal.style.display = 'block'
+  cartItem.classList.remove('active')
+}
+
+checkoutOkButton.onclick = function () {
+  checkoutModal.style.display = 'none'
+}
+
+window.onclick = function (event) {
+  if (event.target == checkoutModal) {
+    checkoutModal.style.display = 'none'
+  }
+}

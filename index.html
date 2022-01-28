@@ -72,7 +72,16 @@
             <div class="price">R$20,99</div>
           </div>
         </div>
-        <a href="#" class="btn">Finalizar compra</a>
+        <input id="myCheckoutBtn" type="button" class="btn" value="Enviar" />
+      </form>
+      <div id="myCheckoutModal" class="modal">
+        <div class="modal-content">
+          <span class="fas fa-check-circle"></span>
+          <p>Compra efetuada!</p>
+          <button id="myCheckoutOk" class="btn">Ok</button>
+        </div>
+      </div>
+    </div>
       </div>
     </header>
     <!-- Header Ends-->
@@ -137,42 +146,42 @@
           <img src="images/menu-1.png" alt="cafezinho tradicional" />
           <h3>Cafézinho tradicional</h3>
           <div class="price">R$3,99 <span>5,99</span></div>
-          <a href="#" class="btn">Adicionar <br />ao carrinho </a>
+          <button class="btn">Adicionar <br />ao carrinho </button>
         </div>
 
         <div class="box">
           <img src="images/menu-2.png" alt="cafe expresso" />
           <h3>Café expresso</h3>
           <div class="price">R$5,99 <span>10,99</span></div>
-          <a href="#" class="btn">Adicionar <br />ao carrinho </a>
+          <button class="btn">Adicionar <br />ao carrinho </button>
         </div>
 
         <div class="box">
           <img src="images/menu-3.png" alt="caffe latte" />
           <h3>Caffè latte</h3>
           <div class="price">R$15,99 <span>20,99</span></div>
-          <a href="#" class="btn">Adicionar <br />ao carrinho </a>
+          <button class="btn">Adicionar <br />ao carrinho </button>
         </div>
 
         <div class="box">
           <img src="images/menu-4.png" alt="macchiato" />
           <h3>Macchiato</h3>
           <div class="price">R$15,99 <span>20,99</span></div>
-          <a href="#" class="btn">Adicionar <br />ao carrinho </a>
+          <button class="btn">Adicionar <br />ao carrinho </button>
         </div>
 
         <div class="box">
           <img src="images/menu-5.png" alt="capuccino" />
           <h3>Capuccino</h3>
           <div class="price">R$12,99 <span>15,99</span></div>
-          <a href="#" class="btn">Adicionar <br />ao carrinho </a>
+          <button class="btn">Adicionar <br />ao carrinho </button>
         </div>
 
         <div class="box">
           <img src="images/menu-6.png" alt="irish coffee" />
           <h3>Irish coffee</h3>
           <div class="price">R$15,99 <span>20,99</span></div>
-          <a href="#" class="btn">Adicionar <br />ao carrinho </a>
+          <button class="btn">Adicionar <br />ao carrinho </button>
         </div>
       </div>
     </section>
@@ -351,8 +360,15 @@
             <span class="fas fa-envelope-square"></span>
             <input type="message" required="required" placeholder="Mensagem" />
           </div>
-          <a href="#contact" class="btn"> Enviar!</a>
+          <input id="myBtn" type="reset" class="btn" value="Enviar" />
         </form>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="fas fa-check-circle"></span>
+            <p>E-mail enviado com sucesso!</p>
+            <button class="btn close">Ok</button>
+          </div>
+        </div>
       </div>
     </section>
 
