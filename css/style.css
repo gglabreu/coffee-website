@@ -510,6 +510,11 @@ section {
   font-size: 50px;
 }
 
+.modal-content .fas.fa-cart-plus {
+  color: #fff;
+  font-size: 50px;
+}
+
 .close:hover {
   cursor: pointer;
 }

@@ -18,6 +18,7 @@
   </head>
   <body>
     <!-- Header Starts-->
+
     <header class="header">
       <a href="#" class="logo">
         <img src="images/logo.png" alt="Logo Cafena" />
@@ -70,6 +71,7 @@
     </div>
       </div>
     </header>
+
     <!-- Header Ends-->
 
     <!-- Home Starts-->
@@ -132,57 +134,73 @@
           <img src="images/menu-1.png" alt="cafezinho tradicional" />
           <h3>Café tradicional</h3>
           <div class="price">R$3,99 <span>5,99</span></div>
-          <button class="btn">Adicionar <br />ao carrinho </button>
+        <input id="myMenuBtn" type="button" class="btn" value="Adicionar ao carrinho" />
+      <div id="myMenuModal" class="modal">
+        <div class="modal-content">
+          <span class="fas.fa-cart-plus"></span>
+          <p>Adicionado ao carrinho.</p>
+          <button id="myMenuOk" class="btn">Ok</button>
         </div>
+      </div>
+    </div>
 
         <div class="box">
           <img src="images/menu-2.png" alt="cafe expresso" />
           <h3>Café expresso</h3>
           <div class="price">R$5,99 <span>10,99</span></div>
-          <button class="btn">Adicionar <br />ao carrinho </button>
+          <input id="myMenuBtn2" type="button" class="btn" value="Adicionar ao carrinho" />
+          <div id="myMenuModal2" class="modal">
+            <div class="modal-content">
+              <span class="fas fa-cart-plus"></span>
+              <p>Adicionado ao carrinho.</p>
+              <button id="myMenuOk2" class="btn">Ok</button>
+            </div>
+          </div>
         </div>
 
         <div class="box">
           <img src="images/menu-3.png" alt="caffe latte" />
           <h3>Caffè latte</h3>
           <div class="price">R$15,99 <span>20,99</span></div>
-          <button class="btn">Adicionar <br />ao carrinho </button>
+          <button class="btn">Adicionar ao carrinho</button>
         </div>
 
         <div class="box">
           <img src="images/menu-4.png" alt="macchiato" />
           <h3>Macchiato</h3>
           <div class="price">R$15,99 <span>20,99</span></div>
-          <button class="btn">Adicionar <br />ao carrinho </button>
+          <button class="btn">Adicionar ao carrinho</button>
         </div>
 
         <div class="box">
           <img src="images/menu-5.png" alt="capuccino" />
           <h3>Capuccino</h3>
           <div class="price">R$12,99 <span>15,99</span></div>
-          <button class="btn">Adicionar <br />ao carrinho </button>
+          <button class="btn">Adicionar ao carrinho</button>
         </div>
 
         <div class="box">
           <img src="images/menu-6.png" alt="irish coffee" />
           <h3>Irish coffee</h3>
           <div class="price">R$15,99 <span>20,99</span></div>
-          <button class="btn">Adicionar <br />ao carrinho </button>
+          <button class="btn">Adicionar ao carrinho</button>
         </div>
       </div>
     </section>
+
     <!-- Menu Ends -->
 
     <!-- Products Starts-->
+
     <section class="products" id="products">
       <h1 class="heading">Nossos <span>produtos</span></h1>
 
       <div class="box-container">
         <div class="box">
           <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-eye"></a>
+            <a href="#products" class="fas fa-shopping-cart"></a>
+            <a href="#products" class="fas fa-heart"></a>
+            <a href="#products" class="fas fa-eye"></a>
           </div>
           <div class="image">
             <img src="images/product-1.png" alt="" />
@@ -202,9 +220,9 @@
 
         <div class="box">
           <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-eye"></a>
+            <a href="#products" class="fas fa-shopping-cart"></a>
+            <a href="#products" class="fas fa-heart"></a>
+            <a href="#products" class="fas fa-eye"></a>
           </div>
           <div class="image">
             <img src="images/product-2.png" alt="" />
@@ -223,9 +241,9 @@
 
         <div class="box">
           <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-eye"></a>
+            <a href="#products" class="fas fa-shopping-cart"></a>
+            <a href="#products" class="fas fa-heart"></a>
+            <a href="#products" class="fas fa-eye"></a>
           </div>
           <div class="image">
             <img src="images/product-3.png" alt="" />
@@ -244,6 +262,7 @@
         </div>
       </div>
     </section>
+
     <!-- Products Ends -->
 
     <!-- Review Starts  -->
@@ -384,15 +403,6 @@
       <div class="credit">
         Desenvolvido por
         <span id="name">Guilherme Abreu</span>
-        e baseado no
-        <br />
-        projeto de
-        <a
-          class="link"
-          href="https://www.youtube.com/c/MrWebDesignerAnas"
-          target="_blank"
-          >Mr. Web Designer</a
-        >
         | all rights reserved
       </div>
     </section>

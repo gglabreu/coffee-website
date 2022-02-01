@@ -43,7 +43,7 @@ function phoneFormat(input) {
   return input
 }
 
-//Modal-------------------------------------------------------------------
+//Modal Contact -------------------------------------------------------------------
 
 var modal = document.getElementById('myModal')
 
@@ -65,7 +65,7 @@ window.onclick = function (event) {
   }
 }
 
-//Checkout Modal-------------------------------------------------------------------
+//Checkout Cart Modal -------------------------------------------------------------------
 
 var checkoutModal = document.getElementById('myCheckoutModal')
 
@@ -85,5 +85,49 @@ checkoutOkButton.onclick = function () {
 window.onclick = function (event) {
   if (event.target == checkoutModal) {
     checkoutModal.style.display = 'none'
+  }
+}
+
+//Modal Menu 1 -------------------------------------------------------------------
+
+var menuModal = document.getElementById('myMenuModal')
+
+var menuBtn = document.getElementById('myMenuBtn')
+
+var menuOkButton = document.getElementById('myMenuOk')
+
+menuBtn.onclick = function () {
+  menuModal.style.display = 'block'
+}
+
+menuOkButton.onclick = function () {
+  menuModal.style.display = 'none'
+}
+
+window.onclick = function (event) {
+  if (event.target == menuModal) {
+    menuModal.style.display = 'none'
+  }
+}
+
+//Modal Menu 2 -------------------------------------------------------------------
+
+var menuModal2 = document.getElementById('myMenuModal2')
+
+var menuBtn2 = document.getElementById('myMenuBtn2')
+
+var menuOkButton2 = document.getElementById('myMenuOk2')
+
+menuBtn2.onclick = function () {
+  menuModal2.style.display = 'block'
+}
+
+menuOkButton2.onclick = function () {
+  menuModal2.style.display = 'none'
+}
+
+window.onclick = function (event) {
+  if (event.target == menuModal2) {
+    menuModal2.style.display = 'none'
   }
 }
