@@ -88,46 +88,124 @@ window.onclick = function (event) {
   }
 }
 
-//Modal Menu 1 -------------------------------------------------------------------
+// Populate Menu ------------------------------------------
 
-var menuModal = document.getElementById('myMenuModal')
-
-var menuBtn = document.getElementById('myMenuBtn')
-
-var menuOkButton = document.getElementById('myMenuOk')
-
-menuBtn.onclick = function () {
-  menuModal.style.display = 'block'
-}
-
-menuOkButton.onclick = function () {
-  menuModal.style.display = 'none'
-}
-
-window.onclick = function (event) {
-  if (event.target == menuModal) {
-    menuModal.style.display = 'none'
+const products = [
+  {
+    productName: 'Tradicional sem açúcar',
+    discountValue: '3,99',
+    value: '5,99',
+    image: 'images/menu-1.png'
+  },
+  {
+    productName: 'Tradicional com açúcar',
+    discountValue: '4,99',
+    value: '6,99',
+    image: 'images/menu-1.png'
+  },
+  {
+    productName: 'Expresso sem açúcar',
+    discountValue: '5,99',
+    value: '10,99',
+    image: 'images/menu-2.png'
+  },
+  {
+    productName: 'Expresso com açúcar',
+    discountValue: '6,99',
+    value: '12,99',
+    image: 'images/menu-2.png'
+  },
+  {
+    productName: 'Caffè latte',
+    discountValue: '15,99',
+    value: '20,99',
+    image: 'images/menu-3.png'
+  },
+  {
+    productName: 'Macchiato',
+    discountValue: '3,99',
+    value: '5,99',
+    image: 'images/menu-4.png'
+  },
+  {
+    productName: 'Capuccino',
+    discountValue: '15,99',
+    value: '20,99',
+    image: 'images/menu-5.png'
+  },
+  {
+    productName: 'Irish coffee',
+    discountValue: '12,99',
+    value: '15,99',
+    image: 'images/menu-6.png'
   }
+]
+
+function populateMenu() {
+  console.log(products)
+  products.forEach(product => {
+    function appendItemsToMenu() {
+      var menuItemElement = document.createElement('div')
+
+      menuItemElement.innerHTML = `
+        <div class="box">
+          <img src=${product.image} alt=${product.productName} />
+          <h3>${product.productName}</h3>
+          <div class="price">R$${product.discountValue} <span>${product.value}</span></div>
+          <button name="buttonAddToCart" class="btn">Adicionar </br> ao carrinho</button>
+        </div>
+      `
+
+      var coffeDrinksMenu = document.getElementById('coffee-drinks-menu')
+      coffeDrinksMenu.appendChild(menuItemElement)
+    }
+
+    appendItemsToMenu()
+
+    var addToCartModal = document.getElementById('addToCartModal')
+
+    var buttonsAddToCart = document.getElementsByName('buttonAddToCart')
+
+    var addToCartModalOk = document.getElementById('addToCartModalOk')
+
+    buttonsAddToCart.forEach((button, index) => {
+      button.onclick = function () {
+        addToCartModal.style.display = 'block'
+
+        var cartItemElement = document.createElement('div')
+
+        cartItemElement.innerHTML = `
+          <div class="cart-item">
+            <span class="fas fa-times" id="remove-item-${index}"></span>
+            <img src=${products[index].image} alt=${products[index].productName} />
+            <div class="content">
+              <h3>${products[index].productName}</h3>
+              <div class="price">R$${products[index].discountValue}</div>
+            </div>
+          </div>
+        `
+
+        var cartItemsContainer = document.getElementById('cart-items')
+        cartItemsContainer.appendChild(cartItemElement)
+
+        var removeItemButtons = document.getElementById(`remove-item-${index}`)
+
+        removeItemButtons.onclick = function () {
+          cartItemElement.remove()
+        }
+      }
+    })
+
+    addToCartModalOk.onclick = function () {
+      addToCartModal.style.display = 'none'
+    }
+
+    window.onclick = function (event) {
+      if (event.target == addToCartModal) {
+        addToCartModal.style.display = 'none'
+      }
+    }
+  })
 }
 
-//Modal Menu 2 -------------------------------------------------------------------
-
-var menuModal2 = document.getElementById('myMenuModal2')
-
-var menuBtn2 = document.getElementById('myMenuBtn2')
-
-var menuOkButton2 = document.getElementById('myMenuOk2')
-
-menuBtn2.onclick = function () {
-  menuModal2.style.display = 'block'
-}
-
-menuOkButton2.onclick = function () {
-  menuModal2.style.display = 'none'
-}
-
-window.onclick = function (event) {
-  if (event.target == menuModal2) {
-    menuModal2.style.display = 'none'
-  }
-}
+populateMenu()
