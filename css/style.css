@@ -218,6 +218,27 @@ section {
   text-align: center;
 }
 
+#myCheckoutBtn {
+  display: none;
+}
+
+#empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #0f0f0f;
+  flex-direction: column;
+}
+
+.header .cart-items-container #empty-cart .fas.fa-cart-arrow-down {
+  font-size: 50px;
+  margin: 10px 0 20px 0;
+}
+
 /* Home CSS----------------------------------------------------------------------------*/
 
 .home {
@@ -511,7 +532,7 @@ section {
 }
 
 .modal-content .fas.fa-cart-plus {
-  color: #fff;
+  color: #65a300;
   font-size: 50px;
 }
 
