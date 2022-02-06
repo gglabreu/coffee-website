@@ -1,3 +1,5 @@
+//Query-----------------------------------------------------------
+
 let navbar = document.querySelector('.navbar')
 
 document.querySelector('#menu-btn').onclick = () => {
@@ -28,6 +30,8 @@ window.onscroll = () => {
   cartItem.classList.remove('active')
 }
 
+//Contact Telephone format----------------------------------------------------------------
+
 function phoneFormat(input) {
   input = input.replace(/\D/g, '')
   var size = input.length
@@ -43,7 +47,7 @@ function phoneFormat(input) {
   return input
 }
 
-//Modal Contact -------------------------------------------------------------------
+//Modal Contact --------------------------------------------------------------------------
 
 var modal = document.getElementById('myModal')
 
@@ -73,9 +77,22 @@ var checkoutBtn = document.getElementById('myCheckoutBtn')
 
 var checkoutOkButton = document.getElementById('myCheckoutOk')
 
+var emptyCart = document.getElementById('empty-cart')
+
 checkoutBtn.onclick = function () {
   checkoutModal.style.display = 'block'
   cartItem.classList.remove('active')
+
+  var cartItems = document.getElementsByName('cartItem')
+
+  while (cartItems.length) {
+    cartItems.forEach(cartItem => {
+      cartItem.remove()
+    })
+  }
+
+  checkoutBtn.style.display = 'none'
+  emptyCart.style.display = 'flex'
 }
 
 checkoutOkButton.onclick = function () {
@@ -88,31 +105,19 @@ window.onclick = function (event) {
   }
 }
 
-// Populate Menu ------------------------------------------
+// Populate Menu ----------------------------------------------------------------
 
 const products = [
   {
-    productName: 'Tradicional sem açúcar',
-    discountValue: '3,99',
-    value: '5,99',
-    image: 'images/menu-1.png'
-  },
-  {
-    productName: 'Tradicional com açúcar',
+    productName: 'Tradicional',
     discountValue: '4,99',
     value: '6,99',
     image: 'images/menu-1.png'
   },
   {
-    productName: 'Expresso sem açúcar',
+    productName: 'Expresso',
     discountValue: '5,99',
     value: '10,99',
-    image: 'images/menu-2.png'
-  },
-  {
-    productName: 'Expresso com açúcar',
-    discountValue: '6,99',
-    value: '12,99',
     image: 'images/menu-2.png'
   },
   {
@@ -142,7 +147,8 @@ const products = [
 ]
 
 function populateMenu() {
-  console.log(products)
+  var checkoutButton = document.getElementById('myCheckoutBtn')
+  var emptyCart = document.getElementById('empty-cart')
   products.forEach(product => {
     function appendItemsToMenu() {
       var menuItemElement = document.createElement('div')
@@ -170,12 +176,14 @@ function populateMenu() {
 
     buttonsAddToCart.forEach((button, index) => {
       button.onclick = function () {
+        emptyCart.style.display = 'none'
+        checkoutButton.style.display = 'block'
         addToCartModal.style.display = 'block'
 
         var cartItemElement = document.createElement('div')
 
         cartItemElement.innerHTML = `
-          <div class="cart-item">
+          <div name="cartItem" class="cart-item">
             <span class="fas fa-times" id="remove-item-${index}"></span>
             <img src=${products[index].image} alt=${products[index].productName} />
             <div class="content">
@@ -192,6 +200,11 @@ function populateMenu() {
 
         removeItemButtons.onclick = function () {
           cartItemElement.remove()
+          var cartItems = document.getElementsByName('cartItem')
+          if (cartItems.length === 0) {
+            checkoutButton.style.display = 'none'
+            emptyCart.style.display = 'flex'
+          }
         }
       }
     })

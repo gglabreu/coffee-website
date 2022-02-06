@@ -223,6 +223,7 @@ section {
 }
 
 #empty-cart {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -287,6 +288,10 @@ section {
 .about .row .content {
   flex: 1 1 45rem;
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .about .row .content h3 {
@@ -299,6 +304,10 @@ section {
   color: #ccc;
   padding: 1rem 0;
   line-height: 1.8;
+}
+
+.about .row .content #know-more {
+  align-self: center;
 }
 
 /*Menu CSS*/
