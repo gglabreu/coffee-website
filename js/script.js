@@ -1,4 +1,4 @@
-//Query-----------------------------------------------------------
+//Query------------------------------------------------------------------------
 
 let navbar = document.querySelector('.navbar')
 
@@ -15,6 +15,8 @@ document.querySelector('#search-btn').onclick = () => {
   navbar.classList.remove('active')
   cartItem.classList.remove('active')
 }
+
+//Cart----------------------------------------------------------------------
 
 let cartItem = document.querySelector('.cart-items-container')
 
@@ -105,7 +107,7 @@ window.onclick = function (event) {
   }
 }
 
-// Populate Menu ----------------------------------------------------------------
+// Populate Menu ----------------------------------------------------------------------
 
 const menuProducts = [
   {
@@ -168,6 +170,8 @@ function populateMenu() {
 
     appendItemsToMenu()
 
+    //Add and delete cart items--------------------------------------------------------------
+
     var addToCartModal = document.getElementById('addToCartModal')
 
     var buttonsAddToCart = document.getElementsByName('buttonAddToCart')
@@ -223,7 +227,7 @@ function populateMenu() {
 
 populateMenu()
 
-// Populate Products ----------------------------------------------------------------
+// Populate Products --------------------------------------------------------------------
 
 const productItems = [
   {
