@@ -107,57 +107,57 @@ window.onclick = function (event) {
 
 // Populate Menu ----------------------------------------------------------------
 
-const products = [
+const menuProducts = [
   {
-    productName: 'Tradicional',
-    discountValue: '4,99',
-    value: '6,99',
-    image: 'images/menu-1.png'
+    menuProductName: 'Tradicional',
+    menuDiscountValue: '4,99',
+    menuValue: '6,99',
+    menuImage: 'images/menu-1.png'
   },
   {
-    productName: 'Expresso',
-    discountValue: '5,99',
-    value: '10,99',
-    image: 'images/menu-2.png'
+    menuProductName: 'Expresso',
+    menuDiscountValue: '5,99',
+    menuValue: '10,99',
+    menuImage: 'images/menu-2.png'
   },
   {
-    productName: 'Caffè latte',
-    discountValue: '15,99',
-    value: '20,99',
-    image: 'images/menu-3.png'
+    menuProductName: 'Caffè latte',
+    menuDiscountValue: '15,99',
+    menuValue: '20,99',
+    menuImage: 'images/menu-3.png'
   },
   {
-    productName: 'Macchiato',
-    discountValue: '3,99',
-    value: '5,99',
-    image: 'images/menu-4.png'
+    menuProductName: 'Macchiato',
+    menuDiscountValue: '3,99',
+    menuValue: '5,99',
+    menuImage: 'images/menu-4.png'
   },
   {
-    productName: 'Capuccino',
-    discountValue: '15,99',
-    value: '20,99',
-    image: 'images/menu-5.png'
+    menuProductName: 'Capuccino',
+    menuDiscountValue: '15,99',
+    menuValue: '20,99',
+    menuImage: 'images/menu-5.png'
   },
   {
-    productName: 'Irish coffee',
-    discountValue: '12,99',
-    value: '15,99',
-    image: 'images/menu-6.png'
+    menuProductName: 'Irish coffee',
+    menuDiscountValue: '12,99',
+    menuValue: '15,99',
+    menuImage: 'images/menu-6.png'
   }
 ]
 
 function populateMenu() {
   var checkoutButton = document.getElementById('myCheckoutBtn')
   var emptyCart = document.getElementById('empty-cart')
-  products.forEach(product => {
+  menuProducts.forEach(menuProduct => {
     function appendItemsToMenu() {
       var menuItemElement = document.createElement('div')
 
       menuItemElement.innerHTML = `
         <div class="box">
-          <img src=${product.image} alt=${product.productName} />
-          <h3>${product.productName}</h3>
-          <div class="price">R$${product.discountValue} <span>${product.value}</span></div>
+          <img src=${menuProduct.menuImage} alt=${menuProduct.menuProductName} />
+          <h3>${menuProduct.menuProductName}</h3>
+          <div class="price">R$${menuProduct.menuDiscountValue} <span>${menuProduct.menuValue}</span></div>
           <button name="buttonAddToCart" class="btn">Adicionar </br> ao carrinho</button>
         </div>
       `
@@ -185,10 +185,10 @@ function populateMenu() {
         cartItemElement.innerHTML = `
           <div name="cartItem" class="cart-item">
             <span class="fas fa-times" id="remove-item-${index}"></span>
-            <img src=${products[index].image} alt=${products[index].productName} />
+            <img src=${menuProducts[index].menuImage} alt=${menuProducts[index].menuProductName} />
             <div class="content">
-              <h3>${products[index].productName}</h3>
-              <div class="price">R$${products[index].discountValue}</div>
+              <h3>${menuProducts[index].menuProductName}</h3>
+              <div class="price">R$${menuProducts[index].menuDiscountValue}</div>
             </div>
           </div>
         `
@@ -222,3 +222,68 @@ function populateMenu() {
 }
 
 populateMenu()
+
+// Populate Products ----------------------------------------------------------------
+
+const productItems = [
+  {
+    productItemsName: 'Traditional NICARAGUA Whole Bean',
+    productItemsDiscountValue: '35,99',
+    productItemsValue: '50,99',
+    productItemsImage: 'images/product-1.png',
+    productItemsRating: 5
+  },
+  {
+    productItemsName: 'Traditional COLUMBIA Whole Bean',
+    productItemsDiscountValue: '15,99',
+    productItemsValue: '45,99',
+    productItemsImage: 'images/product-2.png',
+    productItemsRating: 3
+  },
+  {
+    productItemsName: 'Traditional PERU Whole Bean',
+    productItemsDiscountValue: '30,99',
+    productItemsValue: '50,99',
+    productItemsImage: 'images/product-3.png',
+    productItemsRating: 4
+  }
+]
+
+function populateProducts() {
+  productItems.forEach(productItem => {
+    var menuItemElement = document.createElement('div')
+    menuItemElement.classList.add('box')
+
+    var productStars = []
+    for (var i = 0; i < productItem.productItemsRating; i++) {
+      var star = '<i class="fas fa-star"></i>'
+      productStars.push(star)
+    }
+
+    menuItemElement.innerHTML = `
+      <div class="icons">
+        <a href="#products" class="fas fa-shopping-cart"></a>
+        <a href="#products" class="fas fa-heart"></a>
+        <a href="#products" class="fas fa-eye"></a>
+      </div>
+      <div class="image">
+        <img src="${productItem.productItemsImage}" alt="${
+      productItem.productItemsName
+    }" />
+      </div>
+      <div class="content">
+        <h3>${productItem.productItemsName}</h3>
+        <div class="stars">
+        ${productStars.map(star => star)}
+        </div>
+        <div class="price">R$${productItem.productItemsDiscountValue} <span>${
+      productItem.productItemsValue
+    }</span></div>
+    `
+
+    var productItemsMenu = document.getElementById('product-items')
+    productItemsMenu.appendChild(menuItemElement)
+  })
+}
+
+populateProducts()
