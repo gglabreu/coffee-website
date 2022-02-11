@@ -196,18 +196,28 @@ function populateMenu() {
             </div>
           </div>
         `
+        // Apenas 1 item de cada por compra -------------------------------------------------------------
 
-        var cartItemsContainer = document.getElementById('cart-items')
-        cartItemsContainer.appendChild(cartItemElement)
+        var cartLength = document.getElementsByName(`remove-item-${index}`)
 
-        var removeItemButtons = document.getElementById(`remove-item-${index}`)
+        if (cartLength.length === 0) {
+          var cartItemsContainer = document.getElementById('cart-items')
+          cartItemsContainer.appendChild(cartItemElement)
 
-        removeItemButtons.onclick = function () {
-          cartItemElement.remove()
-          var cartItems = document.getElementsByName('cartItem')
-          if (cartItems.length === 0) {
-            checkoutButton.style.display = 'none'
-            emptyCart.style.display = 'flex'
+          var removeItemButtons = document.getElementById(
+            `remove-item-${index}`
+          )
+
+          removeItemButtons.onclick = function () {
+            cartItemElement.remove()
+
+            var cartItems = document.getElementsByName('cartItem')
+
+            if (cartItems.length === 0) {
+              var t = document.getElementById('myCheckoutBtn')
+              t.style.display = 'none'
+              emptyCart.style.display = 'flex'
+            }
           }
         }
       }

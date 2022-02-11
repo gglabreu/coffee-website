@@ -549,6 +549,12 @@ section {
   cursor: pointer;
 }
 
+.contact .back-to-menu {
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 /* Footer CSS -----------------------------------------------------------------------*/
 
 .footer {
