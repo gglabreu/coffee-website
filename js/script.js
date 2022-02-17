@@ -188,7 +188,7 @@ function populateMenu() {
 
         cartItemElement.innerHTML = `
           <div name="cartItem" class="cart-item">
-            <span class="fas fa-times" id="remove-item-${index}"></span>
+            <span class="fas fa-times" id="remove-item-${index}" name="remove-item-${index}"></span>
             <img src=${menuProducts[index].menuImage} alt=${menuProducts[index].menuProductName} />
             <div class="content">
               <h3>${menuProducts[index].menuProductName}</h3>
@@ -196,11 +196,13 @@ function populateMenu() {
             </div>
           </div>
         `
-        // Apenas 1 item de cada por compra -------------------------------------------------------------
+        //Only 1 item for each checkout---------------------------------------------------------
 
-        var cartLength = document.getElementsByName(`remove-item-${index}`)
+        var cartItemQuantity = document.getElementsByName(
+          `remove-item-${index}`
+        )
 
-        if (cartLength.length === 0) {
+        if (cartItemQuantity.length === 0) {
           var cartItemsContainer = document.getElementById('cart-items')
           cartItemsContainer.appendChild(cartItemElement)
 
