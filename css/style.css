@@ -309,6 +309,7 @@ section {
 
 .about .row .content #know-more {
   align-self: center;
+  padding: 0.9rem 14rem;
 }
 
 /*Menu CSS*/
